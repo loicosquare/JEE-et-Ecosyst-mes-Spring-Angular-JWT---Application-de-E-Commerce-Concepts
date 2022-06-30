@@ -1,4 +1,4 @@
-package org.sid.ecommerceV1.entities;
+package org.sid.lightecomv1.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,20 +7,20 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class Product implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
-    private boolean promotion;
     private double currentPrice;
+    private boolean promotion;
     private boolean selected;
     private boolean available;
     private String photoName;
+    @Transient
+    private int quantity=1;
     @ManyToOne
-    private Category category;
+    private  Category category;
 }

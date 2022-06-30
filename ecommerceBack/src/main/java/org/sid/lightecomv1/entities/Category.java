@@ -1,14 +1,14 @@
-package org.sid.ecommerceV1.entities;
+package org.sid.lightecomv1.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
-
-@Entity @AllArgsConstructor @NoArgsConstructor @ToString
+@Entity
+@Data @NoArgsConstructor @AllArgsConstructor
 public class Category implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

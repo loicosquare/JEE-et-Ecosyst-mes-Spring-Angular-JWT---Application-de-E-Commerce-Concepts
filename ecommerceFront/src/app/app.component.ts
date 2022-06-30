@@ -8,7 +8,7 @@ import { CatalogueService } from './services/catalogue.service';
 })
 export class AppComponent implements OnInit {
   title = 'ecommerceFront';
-  private categories: any;
+  categories: any;
 
   constructor(private catService: CatalogueService) {}
 
@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
     this.catService.getResource('/categories').subscribe(
       (data) => {
         this.categories = data;
+        console.log(this.categories);
       },
       (err) => {
         console.log(err);
