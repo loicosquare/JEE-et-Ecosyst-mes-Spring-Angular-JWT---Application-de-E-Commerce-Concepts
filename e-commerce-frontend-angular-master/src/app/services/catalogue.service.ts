@@ -7,7 +7,7 @@ import {Order} from '../model/Order.model';
   providedIn: 'root'
 })
 export class CatalogueService {
-  public host:string="https://localhost:8443";
+  public host:string="http://localhost:8080";
 
   constructor(private http:HttpClient) {
   }
